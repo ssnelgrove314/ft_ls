@@ -1,7 +1,7 @@
 #ifndef FT_LS_H
 # define FT_LS_H
 
-# include "../libft/libft.h"
+# include "../libs/libft/libft.h"
 # include <dirent.h>
 # include <sys/stat.h>
 # include <sys/xattr.h>
@@ -31,13 +31,14 @@ typedef struct s_file{
 	struct passwd *fpasswd;
 } t_file;
 
-int ft_getopts_ls(t_ls_opts *opts);
-int ft_getargs_ls(t_stack *args);
+int ft_getopts_ls(t_ls_opts *opts, int *argc, char **argv);
+int ft_getargs_ls(t_stack *args, int *argc, char **Argv);
 int ft_ls(t_ls_opts *opts, t_stack *args);
 int ft_ls_once(t_ls_opts *opts, t_file *arg);
 int ft_ls_recurse(t_ls_opts *opts, t_file *arg);
 t_stack *ft_ls_open_dir(t_ls_opts *opts, t_file *arg);
 int ft_ls_sort(t_ls_opts *opts, t_stack *content);
 int ft_ls_print(t_ls_opts *opts, t_stack *content);
+void ft_error(char *error);
 
 #endif
