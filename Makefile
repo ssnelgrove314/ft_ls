@@ -1,7 +1,6 @@
 NAME	:=	ft_ls
 CC		:=	gcc
-CFLAGS	:=	-Wall -Werror -Wextra
-DEBUG	:=	-g -fsanitize=address -L/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1 -lgcc
+CFLAGS	:=	-Wall -Werror -Wextra -g -fsanitize=address
 LDFLAGS	:=	-Llibs/libft -lft
 
 SRC = $(wildcard src/*.c)
@@ -11,7 +10,7 @@ OBJ = $(SRC:.c=.o)
 all: libft $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) -o $@ $^ $(CFLAGS) $(DEBUG) $(LDFLAGS)
+	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
 
 .PHONY: libft
 libft:

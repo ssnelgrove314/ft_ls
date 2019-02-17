@@ -5,14 +5,13 @@
 	"version": "2.0.0",
 	"configurations": [
 		{
+			"name": "(lldb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"name": "(lldb) Launch",
-			"program": "${workspaceFolder}/src",
-			"args": [""],
-			"stopAtEntry": false,
+			"program": "${workspaceFolder}/ft_ls",
+			"args": [],
+			"stopAtEntry": true,
 			"cwd": "${workspaceFolder}",
-			"environment": [],
 			"externalConsole": false,
 			"MIMode": "lldb",
 		}
