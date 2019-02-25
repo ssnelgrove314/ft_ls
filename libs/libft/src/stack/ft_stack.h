@@ -15,14 +15,9 @@
 
 # include "../../libft.h"
 
-typedef struct	s_node
-{
-	void *content;
-	struct s_node *next;
-}				t_node;
-
 typedef struct s_stack
 {
+	size_t size;
 	t_node *head;
 }		t_stack;
 

@@ -1,11 +1,14 @@
 NAME	:=	ft_ls
 CC		:=	gcc
-CFLAGS	:=	-Wall -Werror -Wextra -g -fsanitize=address
+CFLAGS	:=	-Wall -Werror -Wextra -g -fsanitize=address -Iincludes
 LDFLAGS	:=	-Llibs/libft -lft
 
-SRC = $(wildcard src/*.c)
+SRC :=	$(wildcard src/ls_core/*.c) \
+		$(wildcard src/ls_opts_and_arg/*.c) \
+		$(wildcard src/ls_printing/*.c) \
+		$(wildcard src/ls_sorting_functions/*.c)
 
-OBJ = $(SRC:.c=.o)
+OBJ := $(SRC:.c=.o)
 
 all: libft $(NAME)
 

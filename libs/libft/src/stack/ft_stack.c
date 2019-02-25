@@ -16,11 +16,12 @@ void			stack_init(t_stack *stack)
 {
 	stack = (t_stack *)ft_memalloc(sizeof(t_stack));
 	stack->head = NULL;
+	stack->size = 0;
 }
 
 int			stack_empty(t_stack *stack)
 {
-	return ((stack->head) ? 0 : 1);
+	return (stack->size == 0);
 }
 
 void			stack_push(t_stack *stack, void *content)
@@ -34,6 +35,7 @@ void			stack_push(t_stack *stack, void *content)
 	tmp = stack->head;
 	stack->head = new_elem;
 	new_elem->next = tmp;
+	stack->size++;
 }
 
 void			*stack_pop(t_stack *stack)
@@ -48,6 +50,7 @@ void			*stack_pop(t_stack *stack)
 	pop = stack->head->content;
 	tmp = stack->head;
 	stack->head = stack->head->next;
+	stack->size--;
 	free (tmp);
 	return (pop);
 }

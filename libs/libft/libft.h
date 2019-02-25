@@ -13,6 +13,12 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+typedef struct	s_node
+{
+	void *content;
+	struct s_node *next;
+}				t_node;
+
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -23,7 +29,6 @@
 # include "macrosoft.h"
 # include "src/ctype/ctype.h"
 # include "src/mem/mem.h"
-# include "src/ft_qsort/ft_qsort.h"
 # include "src/stack/ft_stack.h"
 # include "src/string/ft_string.h"
 # include "src/math/ft_math.h"
@@ -33,7 +38,7 @@
 # include "src/vector/ft_vector.h"
 # include "src/queue/ft_queue.h"
 # include "src/get_next_line/get_next_line.h"
-# include "src/ft_getopt_long/ft_getopt_long.h"
 # include "src/printf/ft_printf.h"
+# include "src/mergesort/ft_mergesort.h"
 
 #endif
